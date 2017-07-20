@@ -60,56 +60,6 @@ public class MyDispatcherServlet extends HttpServlet {
 
     }
 
-//    private <T> void addEntries(Class<T> classes) {
-//        String path = "";
-//        Method[] methods;
-//        String key;
-//        MethodAttributes attributes;
-//        MyRequestMethod methodAnnotation;
-//
-//        //verific daca am adnotarea MyController pe clasa
-//        if (!classes.isAnnotationPresent(MyController.class))
-//            return;
-//
-//        //iau urlPath de pe clasa si concatenez
-//        path += classes.getAnnotation(MyController.class).urlPath();
-//
-//        methods = classes.getDeclaredMethods();
-//
-//        for (Method index : methods)
-//            if (index.isAnnotationPresent(MyRequestMethod.class)) {
-//
-//                methodAnnotation = index.getAnnotation(MyRequestMethod.class);
-//
-//                attributes = new MethodAttributes();
-//                attributes.setMethodName(index.getName());
-//                attributes.setControllerClass(classes.getName());
-//                attributes.setMethodType(methodAnnotation.methodType());
-//
-//                key = path + methodAnnotation.urlPath() + "/method=" + methodAnnotation.methodType();
-//
-//                allowedMethods.put(key, attributes);
-//
-//            }
-//
-//    }
-//
-//    public void init() {
-//        allowedMethods = new HashMap<>();
-//
-//        try {
-//            AnnotationScanUtils allClasses = null;
-//            Iterable<Class> listOfClasses = allClasses.getClasses("ro.teamnet.zth.appl.controller");
-//
-//            for (Class classes : listOfClasses)
-//                addEntries(classes);
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-
         @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         dispatchReply(req,resp,"GET");
@@ -164,43 +114,4 @@ public class MyDispatcherServlet extends HttpServlet {
         response.getWriter().write(e.getMessage());
     }
 
-//    private void dispatchReply(HttpServletRequest req, HttpServletResponse resp, String methodType) throws IOException {
-//        try {
-//            Object resultToDisplay = dispatch(req, methodType);
-//            reply(resp, resultToDisplay);
-//        } catch (Exception e) {
-//            sendExceptionError(e, resp);
-//        }
-//    }
-//
-//    private Object dispatch (HttpServletRequest req, String methodType){
-//        String path = req.getPathInfo();
-//        MethodAttributes attributes;
-//
-//        if((!path.startsWith("/employees"))&(!path.startsWith("/departments")))
-//            throw new RuntimeException("Wrong url!!");
-//
-//        String url = path + "/" +methodType;
-//        attributes =  allowedMethods.get(url);
-//
-//        if(attributes != null) {
-//            try {
-//                Class controllerClass = Class.forName(attributes.getControllerClass());
-//                Method method = controllerClass.getMethod(attributes.getMethodName());
-//                return method.invoke(controllerClass.newInstance());
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return null;
-//
-//    }
-//
-//    private void reply (HttpServletResponse resp, Object result) throws IOException {
-//        resp.getWriter().write(result.toString());
-//    }
-//
-//    private void sendExceptionError(Exception ex, HttpServletResponse resp) throws IOException {
-//        resp.getWriter().write(ex.getMessage());
-//    }
 }
