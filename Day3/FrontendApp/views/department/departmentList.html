@@ -1,0 +1,24 @@
+<table class="table table-striped table-bordered">
+    <tr>
+        <th class="text-center">Id</th>
+        <th class="text-center">Department Name</th>
+        <th class="text-center">Location</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    <tr ng-repeat="department in departments">
+        <td class="text-center">
+            {{department.departmentId}}
+        </td>
+        <td class="text-center">
+            {{department.departmentName}}
+        </td>
+        <td class="text-center">
+            {{department.locationId.streetAddress + ", " + department.locationId.postalCode + " - " + department.locationId.city}}{{department.locationId.stateProvince ? ", " + department.locationId.stateProvince : ""}}
+        </td>
+        <td class="text-center">
+            <button type="button" class="btn btn-link" ng-click="view(department.departmentId)">View</button>
+            <button type="button" class="btn btn-link" ng-click="edit(department.departmentId)">Edit</button>
+            <button type="button" class="btn btn-link" ng-click="delete(department.departmentId)">Delete</button>
+        </td>
+    </tr>
+</table>

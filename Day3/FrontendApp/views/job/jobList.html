@@ -1,0 +1,28 @@
+<table class="table table-striped table-bordered">
+    <tr>
+        <th class="text-center">Id</th>
+        <th class="text-center">Job Title</th>
+        <th class="text-center">Maximum Salary</th>
+        <th class="text-center">Minimum Salary</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    <tr ng-repeat="job in jobs">
+        <td class="text-center">
+            {{job.jobId}}
+        </td>
+        <td class="text-center">
+            {{job.jobTitle}}
+        </td>
+        <td class="text-center">
+            {{job.maxSalary}}
+        </td>
+        <td class="text-center">
+            {{job.minSalary}}
+        </td>
+        <td class="text-center">
+            <button type="button" class="btn btn-link" ng-click="view(job.jobId)">View</button>
+            <button type="button" class="btn btn-link" ng-click="edit(job.jobId)">Edit</button>
+            <button type="button" class="btn btn-link" ng-click="delete(job.jobId)">Delete</button>
+        </td>
+    </tr>
+</table>

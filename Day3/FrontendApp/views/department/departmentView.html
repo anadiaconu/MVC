@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">View department <b>{{department.departmentName}}</b></h2>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="departmentName">Department Name:</label>
+                    <span id="departmentName" class="form-control">{{department.departmentName}}</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <span id="location" class="form-control">{{department.locationId.streetAddress + ", " + department.locationId.postalCode + " - " + department.locationId.city}}{{department.locationId.stateProvince ? ", " + department.locationId.stateProvince : ""}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group text-center">
+                    <button class="btn btn-primary" ng-click="back()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Add department</h2>
+    </div>
+    <div class="panel-body">
+        <ng-form name="departmentAddForm">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group" ng-class="{ 'has-error': departmentAddForm.departmentName.$invalid }">
+                        <label for="departmentName">Department Name:</label>
+                        <input type="text" id="departmentName" name="departmentName" class="form-control" ng-model="department.departmentName" required />
+                        <span class="help-block" ng-show="departmentAddForm.departmentName.$error.required
+                             && departmentAddForm.departmentName.$dirty">{{requiredErrorMessage}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group" ng-class="{ 'has-error': departmentAddForm.location.$invalid }">
+                        <label for="location">Location:</label>
+                        <select id="location" name="location" class="form-control" data-ng-model="department.locationId"
+                                ng-options="location as location.streetAddress + ', ' + location.postalCode + ' - ' + location.city for location in locations track by location.locationId" required></select>
+                        <span class="help-block" ng-show="departmentAddForm.location.$error.required
+                             && departmentAddForm.location.$dirty">{{requiredErrorMessage}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group text-center">
+                        <a class="btn btn-primary" role="button" ng-click="save(department)" data-ng-disabled="departmentAddForm.$invalid">Save</a>
+                        <a class="btn btn-danger" role="button" ng-click="reset()">Reset</a>
+                    </div>
+                </div>
+            </div>
+        </ng-form>
+    </div>
+</div>

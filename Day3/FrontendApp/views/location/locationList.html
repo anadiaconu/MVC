@@ -1,0 +1,32 @@
+<table class="table table-striped table-bordered">
+    <tr>
+        <th class="text-center">Id</th>
+        <th class="text-center">State Province</th>
+        <th class="text-center">City</th>
+        <th class="text-center">Postal Code</th>
+        <th class="text-center">Street Address</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    <tr ng-repeat="location in locations">
+        <td class="text-center">
+            {{location.locationId}}
+        </td>
+        <td class="text-center">
+            {{location.stateProvince}}
+        </td>
+        <td class="text-center">
+            {{location.city}}
+        </td>
+        <td class="text-center">
+            {{location.postalCode}}
+        </td>
+        <td class="text-center">
+            {{location.streetAddress}}
+        </td>
+        <td class="text-center">
+            <button type="button" class="btn btn-link" ng-click="view(location.locationId)">View</button>
+            <button type="button" class="btn btn-link" ng-click="edit(location.locationId)">Edit</button>
+            <button type="button" class="btn btn-link" ng-click="delete(location.locationId)">Delete</button>
+        </td>
+    </tr>
+</table>

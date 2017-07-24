@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HR App</title>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+    </head>
+    <body>
+        <div ng-app="hrApp">
+            <div ng-include="'views/menu.html'"></div>
+            <div class="container-fluid" ng-view></div>
+        </div>
+
+        <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/services/CommonResourcesFactory.js"></script>
+        <script type="text/javascript" src="scripts/controllers/MainController.js"></script>
+        <script type="text/javascript" src="scripts/services/MenuServices.js"></script>
+        <script type="text/javascript" src="scripts/controllers/MenuController.js"></script>
+        <script type="text/javascript" src="scripts/services/EmployeeService.js"></script>
+        <script type="text/javascript" src="scripts/controllers/employee/EmployeeListController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/employee/EmployeeViewController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/employee/EmployeeAddController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/employee/EmployeeEditController.js"></script>
+        <script type="text/javascript" src="scripts/services/JobService.js"></script>
+        <script type="text/javascript" src="scripts/controllers/job/JobListController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/job/JobAddController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/job/JobViewController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/job/JobEditController.js"></script>
+        <script type="text/javascript" src="scripts/services/LocationService.js"></script>
+        <script type="text/javascript" src="scripts/controllers/location/LocationListController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/location/LocationAddController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/location/LocationViewController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/location/LocationEditController.js"></script>
+        <script type="text/javascript" src="scripts/services/DepartmentService.js"></script>
+        <script type="text/javascript" src="scripts/controllers/department/DepartmentListController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/department/DepartmentAddController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/department/DepartmentViewController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/department/DepartmentEditController.js"></script>
+
+    </body>
+</html>
